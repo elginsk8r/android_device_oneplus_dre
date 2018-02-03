@@ -96,6 +96,8 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('"max_retry_alloc_output_timeout": 2000,', '"max_retry_alloc_output_timeout": 0,'),
     'vendor/etc/msm_irqbalance.conf': blob_fixup()
         .regex_replace('IGNORED_IRQ=19,21,38$', 'IGNORED_IRQ=19,21,38,209,218'),
+    'vendor/etc/public.libraries.txt': blob_fixup()
+        .regex_replace('libqti-perfd-client.so\n', ''),
     'vendor/lib64/hw/com.qti.chi.override.so': blob_fixup()
         .add_needed('libcamera_metadata_shim.so'),
     'vendor/lib64/libril-db.so': blob_fixup()
