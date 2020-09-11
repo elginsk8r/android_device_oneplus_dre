@@ -5,6 +5,14 @@ audio.offload.min.duration.secs=30
 audio.offload.video=true
 ro.af.client_heap_size_kbyte=7168
 
+# Dalvik
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapsize=256m
+dalvik.vm.heapgrowthlimit=128m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=8m
+
 # GMS
 ro.opa.device_model_id=ga-oplus-skill-os121-211011
 
