@@ -16,6 +16,14 @@ vendor.sensors.als_correction.sensor_inverse_gain=1.003141 0.497163 0.28517 0.17
 aaudio.hw_burst_min_usec=2000
 aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
+<<<<<<< HEAD
+=======
+audio.deep_buffer.media=true
+audio.offload.video=false
+persist.vendor.audio.ambisonic.auto.profile=false
+persist.vendor.audio.ambisonic.capture=false
+persist.vendor.audio.apptype.multirec.enabled=false
+>>>>>>> c870005d4 (fixup! sm8250-common: Set persist.sys.sf.color_mode to DISPLAY_COLOR_MANAGED (0))
 persist.vendor.audio.avs.afe_api_version=2
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.fluence.voicecall=true
@@ -139,6 +147,7 @@ debug.sf.high_fps_late_app_phase_offset_ns=1000000
 debug.sf.high_fps_late_sf_phase_offset_ns=-2000000
 debug.sf.latch_unsignaled=1
 debug.sf.treat_170m_as_sRGB=1
+persist.sys.sf.color_mode=0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
