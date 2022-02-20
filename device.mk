@@ -273,6 +273,7 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.oplus-multihal \
+    sensors.oplus \
     vendor.lineage.oplus_als.service
 
 PRODUCT_COPY_FILES += \
