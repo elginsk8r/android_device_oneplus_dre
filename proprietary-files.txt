@@ -875,16 +875,10 @@ vendor/etc/Oppo_QC_LTM_Commercial_SM8250_2020_01_15.pfm|a99bbcf592ff7317ca51e4bc
 vendor/lib64/libhdr_tm.so|7954c5cd5c0b23fe8d0609361c22d24c59f1448b
 
 # Display (HWC) - from CPH2467_14.0.0.930(EX01)
-vendor/bin/hw/vendor.qti.hardware.display.composer-service|ba1b687901dc9d1d4ae4e0243d8e72e3fe6ec690
 vendor/bin/qdcmss|2dd2d71247c85a1bb6b3168d53cd844cb387f75c
 vendor/etc/init/qdcmss.rc|53d78d686678c4f923a9ec4ace7d4d3575b13788
-vendor/etc/snapdragon_color_libs_config.xml|20be96679760b14cd63577a17f4a040e543254dd
-vendor/lib64/libdisplayconfig.qti.so|8e70f56d0b9a18ad5fd8f12a70657bf769813a88
 vendor/lib64/libdpps.so|4a0dfa8cf2928eb044fabde3e2d67791c776e19b
 vendor/lib64/libqdcm-mode-parser.so|faa5555b454d1f0b28d4ac460ebdb75f39b0fa46
-vendor/lib64/libqdutils.so|43cb901343c2b6967c3fc74c8bdce33c2c1942f4
-vendor/lib64/libsdmcore.so|9c6d7a8a8af7028029ccc73cf615f1282d9c63d1
-vendor/lib64/libsdmutils.so|3d955a8d7e7fe76e3b3486db306357b1f117be4d
 vendor/lib64/libsnapdragoncolor-manager.so|e7f55a1ba843bb570afa6bbf16bb61dc01ec74ea
 vendor/lib64/libsnapdragoncolor-qdcm.so|673c41753603bacb197674df567723dfd928384e
 
@@ -897,7 +891,6 @@ vendor/lib64/libdisplayqos.so|aa222f4c1a2d2fb60944c44f8a82621d6bc75184
 vendor/lib64/libdisplayskuutils.so|37e4d543c696a5c9f0c1b44fd7299a0bc7dba5e8
 vendor/lib64/libqseed3.so|d62c37baf259250cadfcff8734e82054ed87bb96
 vendor/lib64/librcmask.so|8feb479fe590b6aec282ce3342574d9113f80516
-vendor/lib64/libsdedrm.so|6ed014f661a4a926dfe909630c8aa3edb653410f
 vendor/lib64/libsdm-color.so|1c416b205c996575d26a41c5d7a9d07728f9134a
 vendor/lib64/libsdm-colormgr-algo.so|5416a3b9b0735099c9b86f451f41386711787ea4
 vendor/lib64/libsdm-diag.so|393c9ad3e3ad3210515900627f65bf6e3633226e
