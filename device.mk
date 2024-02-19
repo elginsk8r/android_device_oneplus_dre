@@ -18,7 +18,8 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 # Platform
 TARGET_COMMON_QTI_COMPONENTS := \
-    adreno
+    adreno \
+    perf
 $(call inherit-product, device/qcom/common/build/target/holi.mk)
 
 # Set product shipping level
@@ -341,18 +342,9 @@ PRODUCT_PACKAGES += \
     libOmxQcelp13Enc \
     libstagefrighthw
 
-# Perf
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/perf,$(TARGET_COPY_OUT_VENDOR)/etc/perf) \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/lm,$(TARGET_COPY_OUT_VENDOR)/etc/lm) \
-    system/core/libprocessgroup/profiles/task_profiles.json:$(TARGET_COPY_OUT_VENDOR)/etc/task_profiles.json \
-    vendor/qcom/opensource/power/config/holi/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
-
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
-    android.hardware.power@1.2.vendor \
-    vendor.qti.hardware.perf@2.2.vendor
+    android.hardware.power@1.2.vendor
 
 # QMI
 PRODUCT_PACKAGES += \
