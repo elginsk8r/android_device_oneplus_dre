@@ -58,9 +58,6 @@ function blob_fixup() {
         product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml)
             sed -i "s/\/my_product/\/product/" "${2}"
             ;;
-        system_ext/lib64/libwfdnative.so)
-            sed -i "s/android.hidl.base@1.0.so/libhidlbase.so\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/" "${2}"
-            ;;
         vendor/etc/init/hw/init.qti.kernel.rc)
             sed -i '/    \# set aggressive read ahead for dm\-0 and dm\-1 during boot up/d' "${2}"
             sed -i '/    \#Reset read ahead for dm\-0, dm\-1 and dm\-2 to 512kb/d' "${2}"
