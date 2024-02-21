@@ -19,6 +19,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 # Platform
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
+    alarm \
     perf \
     wfd
 $(call inherit-product, device/qcom/common/build/target/holi.mk)
@@ -252,6 +253,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom.vendor_ramdisk \
     init.class_main.sh \
     init.oplus.rc \
+    init.qcom.alarm.rc \
     init.qcom.early_boot.sh \
     init.qcom.rc \
     init.qcom.irq_affinity.sh \
