@@ -20,6 +20,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
     alarm \
+    charging \
     perf \
     wfd
 $(call inherit-product, device/qcom/common/build/target/holi.mk)
