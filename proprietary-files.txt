@@ -847,57 +847,11 @@ vendor/etc/init/vendor.qti.diag.rc
 vendor/lib/vendor.qti.diaghal@1.0.so
 vendor/lib64/vendor.qti.diaghal@1.0.so
 
-# Display (Features) - from Spacewar-U2.5-240119-1910
-vendor/bin/feature_enabler_client|86f0eed3ab235986d009b22c60f0a73b136d8e36
-vendor/etc/init/feature_enabler_client.rc|7c8e7cf20093d1a6d94d7de2debd53a7e51f8c29
-
 # Display (Features)
 vendor/etc/Oppo_QC_LTM_Commercial_SM8250_2020_01_15.pfm
 
-# Display (HDR) - from Spacewar-U2.5-240119-1910
-vendor/lib64/libhdr_tm.so|7954c5cd5c0b23fe8d0609361c22d24c59f1448b
-
-# Display (HWC) - from Spacewar-U2.5-240119-1910
-vendor/bin/qdcmss|2dd2d71247c85a1bb6b3168d53cd844cb387f75c
-vendor/etc/init/qdcmss.rc|53d78d686678c4f923a9ec4ace7d4d3575b13788
-vendor/etc/snapdragon_color_libs_config.xml|20be96679760b14cd63577a17f4a040e543254dd
-vendor/lib64/libqdcm-mode-parser.so|207143ab4dda0886bde2a0333d7a1bcd7af6f8e1
-vendor/lib64/libsnapdragoncolor-manager.so|e7f55a1ba843bb570afa6bbf16bb61dc01ec74ea
-vendor/lib64/libsnapdragoncolor-qdcm.so|673c41753603bacb197674df567723dfd928384e
-
-# Display (SDM) - from Spacewar-U2.5-240119-1910
-vendor/etc/display/DPU660.xml|b26dd73e361546d89bf3d7082a471703dc6ac2cb
-vendor/etc/display/DPU670.xml|e5131a60ceff29ca5eb561eec7eddadef1d0486f
-vendor/etc/display/DPU720.xml|4e54e8712d65773eb87867bf64a4cb98ea9bb8c3
-vendor/etc/display/DPU7__.xml|c056f3cb9fa123ca3de5b2a9775c184dddf25b9d
-vendor/etc/display/advanced_sf_offsets.xml|e145a0c0f975f6d924fbe7f18f531ae044ec3bef
-vendor/lib64/libdisplayqos.so|aa222f4c1a2d2fb60944c44f8a82621d6bc75184
-vendor/lib64/libdisplayskuutils.so|77a89896ee24fcf26ac2fadbf901d45c668e704e
-vendor/lib64/libqseed3.so|d62c37baf259250cadfcff8734e82054ed87bb96
-vendor/lib64/librcmask.so|8feb479fe590b6aec282ce3342574d9113f80516
-vendor/lib64/libsdm-color.so|a83576915a146492d430711e273b9af9a95d4fed
-vendor/lib64/libsdm-colormgr-algo.so|5416a3b9b0735099c9b86f451f41386711787ea4
-vendor/lib64/libsdm-diag.so|218bae2b1300bd562f813a849244e843c05a891e
-vendor/lib64/libsdm-disp-vndapis.so|dc3ff8c971bbcb0d1b9e5079324d1d1d05a1fd39
-vendor/lib64/libsdmextension.so|f30b846c9a4cce9a7b7ca1c2d4d2aaf02842daf0
-vendor/lib64/libtinyxml2_1.so|11ceb3f1e7650c41621d47e5ec5567c8f466086e
-
 # Display calibration data
 vendor/etc/qdcm_calib_data_nt36672c_tm_fhd_plus_video_mode_dsi_panel.xml
-
-# Display postprocessing - from Spacewar-U2.5-240119-1910
-vendor/bin/hw/vendor.display.color@1.0-service|cd08e02010826714d52e44d655a33faf537e076d
-vendor/bin/ppd|4fcb818e39c813570fdbfaa9726274986e190e04
-vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
-vendor/lib64/libdisp-aba.so|3ff1c1d30d96c3ce3608378b2afcc75b892845cb
-vendor/lib64/libdpps.so|294b81c975f631dd71cfcfb663d9d8af66704803
-vendor/lib64/vendor.display.color@1.0.so|76e84677fefbe97a0c9d33646fca2834e77a3b6f
-vendor/lib64/vendor.display.color@1.1.so|3aa79bbf7592472d87c29f91a106141eff8a9a74
-vendor/lib64/vendor.display.color@1.2.so|8b5ed3c2b39aa38f6194f2ed3872166f88b8ad98
-vendor/lib64/vendor.display.color@1.3.so|1ff2c50e6b8c0bc95f3476aa5b066024e0fc9261
-vendor/lib64/vendor.display.color@1.4.so|6e4cffe7b1a287dee9c4fb9b8e08ddac50b916b4
-vendor/lib64/vendor.display.color@1.5.so|0474d3d9123fd38538a3cd1e3c267608d71b7126
-vendor/lib64/vendor.display.postproc@1.0.so|f82e704e275c25ef27ff37cdbbfb2360e53c2611
 
 # DPM
 system_ext/bin/dpmd
