@@ -109,13 +109,6 @@ ro.surface_flinger.use_content_detection_for_refresh_rate=true
 # Incremental FS
 ro.incremental.enable=yes
 
-# Radio
-persist.vendor.radio.custom_ecc=1
-persist.vendor.radio.mt_sms_ack=30
-persist.vendor.radio.procedure_bytes=SKIP
-persist.vendor.radio.rat_on=combine
-ro.telephony.default_network=33,33
-
 # Sensors
 persist.vendor.sensors.debug.ssc_qmi_debug=true
 persist.vendor.sensors.enable.mag_filter=true
