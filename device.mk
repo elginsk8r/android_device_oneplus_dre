@@ -503,6 +503,7 @@ PRODUCT_PACKAGES += \
 
 # Wi-Fi Display
 PRODUCT_PACKAGES += \
+    android.media.audio.common.types-V2-cpp \
     libnl \
     libpng.vendor:32 \
     libwfdaac_vendor
