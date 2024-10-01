@@ -100,6 +100,8 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('libqti-perfd-client.so\n', ''),
     'vendor/lib64/hw/com.qti.chi.override.so': blob_fixup()
         .add_needed('libcamera_metadata_shim.so'),
+    'vendor/lib64/libril-db.so': blob_fixup()
+        .binary_regex_replace(rb'persist\.vendor\.radio\.poweron_opt', rb'persist.vendor.radio.poweron_ign'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
