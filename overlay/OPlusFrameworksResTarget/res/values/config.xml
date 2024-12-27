@@ -429,6 +429,11 @@
         <item>80</item>
     </integer-array>
 
+    <!-- Indicate available ColorDisplayManager.COLOR_MODE_xxx. -->
+    <integer-array name="config_availableColorModes">
+        <item>2</item> <!-- COLOR_MODE_SATURATED -->
+    </integer-array>
+
     <!-- Indicates whether device has a power button fingerprint sensor. -->
     <bool name="config_is_powerbutton_fps" translatable="false">true</bool>
 
