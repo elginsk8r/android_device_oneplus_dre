@@ -431,7 +431,8 @@
 
     <!-- Indicate available ColorDisplayManager.COLOR_MODE_xxx. -->
     <integer-array name="config_availableColorModes">
-        <item>2</item> <!-- COLOR_MODE_SATURATED -->
+        <item>0</item> <!-- COLOR_MODE_NATURAL -->
+        <item>1</item> <!-- COLOR_MODE_BOOSTED -->
     </integer-array>
 
     <!-- Indicates whether device has a power button fingerprint sensor. -->
