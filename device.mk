@@ -128,8 +128,11 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.memtrack-service
 
+DISPLAY_HAL_DIR := hardware/qcom-caf/sm8350/display
+
 PRODUCT_COPY_FILES += \
-    hardware/qcom-caf/sm8350/display/config/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml
+    $(DISPLAY_HAL_DIR)/config/qdcm_calib_data_bengal_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_nt36672c_tm_fhd_plus_video_mode_dsi_panel.xml \
+    $(DISPLAY_HAL_DIR)/config/snapdragon_color_libs_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/snapdragon_color_libs_config.xml
 
 # DRM
 PRODUCT_PACKAGES += \
