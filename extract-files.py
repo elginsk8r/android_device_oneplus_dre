@@ -10,7 +10,6 @@ from extract_utils.fixups_blob import (
 )
 from extract_utils.fixups_lib import (
     lib_fixups,
-    lib_fixups_user_type,
 )
 from extract_utils.main import (
     ExtractUtils,
@@ -18,36 +17,12 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'device/oneplus/dre',
     'hardware/oplus',
-    'hardware/qcom-caf/sm8350',
-    'hardware/qcom-caf/wlan',
-    'vendor/qcom/opensource/commonsys-intf/display',
-    'vendor/qcom/opensource/commonsys/display',
-    'vendor/qcom/opensource/dataservices',
+    'vendor/oneplus/sm6375-common',
     'vendor/qcom/opensource/display',
 ]
 
-
-def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
-    return f'{lib}_vendor' if partition in ['odm', 'vendor'] else None
-
-
-lib_fixups: lib_fixups_user_type = {
-    **lib_fixups,
-    (
-        'com.qualcomm.qti.dpm.api@1.0',
-        'libmmosal',
-        'vendor.qti.diaghal@1.0',
-        'vendor.qti.hardware.fm@1.0',
-        'vendor.qti.hardware.wifidisplaysession@1.0',
-        'vendor.qti.imsrtpservice@3.0',
-    ): lib_fixup_vendor_suffix,
-}
-
 blob_fixups: blob_fixups_user_type = {
-    'odm/etc/init/android.hardware.drm@1.3-service.widevine.rc': blob_fixup()
-        .regex_replace('writepid /dev/cpuset/foreground/tasks', 'task_profiles ProcessCapacityHigh'),
     ('odm/lib/liblvimfs_wrapper.so', 'odm/lib64/libCOppLceTonemapAPI.so', 'odm/lib64/libaps_frame_registration.so'): blob_fixup()
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
     'odm/lib64/libarcsoft_portrait_super_night_raw.so': blob_fixup()
@@ -68,54 +43,14 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_lock')
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
-    ('odm/lib64/libwvhidl.so','odm/lib64/mediadrm/libwvdrmengine.so'): blob_fixup()
-        .add_needed('libcrypto_shim.so'),
-    'product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml': blob_fixup()
-        .regex_replace('/my_product', '/product'),
-    'system_ext/bin/wfdservice': blob_fixup()
-        .add_needed('libwfdservice_shim.so'),
-    'system_ext/lib/libwfdmmsrc_system.so': blob_fixup()
-        .add_needed('libgui_shim.so'),
-    'system_ext/lib/libwfdservice.so': blob_fixup()
-        .replace_needed('android.media.audio.common.types-V2-cpp.so', 'android.media.audio.common.types-V4-cpp.so'),
-    'system_ext/lib64/libwfdnative.so': blob_fixup()
-        .replace_needed('android.hidl.base@1.0.so', 'libhidlbase.so')
-        .add_needed('libbinder_shim.so')
-        .add_needed('libinput_shim.so'),
-    'vendor/bin/init.kernel.post_boot-blair.sh': blob_fixup()
-        .patch_file('blob-patches/init-post-boot-blair.patch'),
-    'vendor/bin/init.kernel.post_boot-holi.sh': blob_fixup()
-        .patch_file('blob-patches/init-post-boot-holi.patch'),
-    'vendor/etc/init/vendor.qti.media.c2@1.0-service.rc': blob_fixup()
-        .regex_replace('writepid /dev/cpuset/foreground/tasks', 'task_profiles ProcessCapacityHigh'),
-    'vendor/etc/media_holi/video_system_specs.json': blob_fixup()
-        .regex_replace('"max_retry_alloc_output_timeout": 2000,', '"max_retry_alloc_output_timeout": 0,'),
     'vendor/etc/libnfc-nci.conf': blob_fixup()
         .regex_replace('NFC_DEBUG_ENABLED=1', 'NFC_DEBUG_ENABLED=0'),
-    'vendor/etc/msm_irqbalance.conf': blob_fixup()
-        .regex_replace('IGNORED_IRQ=19,21,38$', 'IGNORED_IRQ=19,21,38,209,218'),
     'vendor/etc/qdcm_calib_data_nt36672c_tm_fhd_plus_video_mode_dsi_panel.xml': blob_fixup()
         .regex_replace('FeatureType="2" Disable="false"', 'FeatureType="2" Disable="true"')
         .regex_replace('FeatureType="7" Disable="false"', 'FeatureType="7" Disable="true"')
         .regex_replace('FeatureType="8" Disable="false"', 'FeatureType="8" Disable="true"')
         .regex_replace('20121_v1_20201113', 'native')
         .regex_replace('SRGB', 'sRGB'),
-    'vendor/etc/perf/perfboostsconfig.xml': blob_fixup()
-        .regex_replace('0x40800000, 1535, 0x40800100, 1478', '0x40800000, 0xFFF, 0x40800100, 0xFFF')
-        .regex_replace('0x40800000, 1516, 0x40800100, 1516', '0x40800000, 0xFFF, 0x40800100, 0xFFF')
-        .regex_replace('0x7F3', '0xFFF')
-        .regex_replace('0x70C', '0xFFF')
-        .regex_replace('0x40800100, 1000, 0x42804000, 0', '0x40800000, 1516, 0x42804000, 0, 0x42C20000, 1')
-        .regex_replace('</PerfBoost>', '    <Config\n                Id="0x000011F0" Enable="true" Target="holi"\n                Resources="0x40804000, 1401, 0x40804100, 1190, 0x42810000, 355" />\n    </PerfBoost>'),
-    'vendor/etc/perf/perfconfigstore.xml': blob_fixup()
-        .regex_replace('Name="vendor.iop.enable_uxe" Value="1"', 'Name="vendor.iop.enable_uxe" Value="0"')
-        .regex_replace('Name="ro.vendor.qti.sys.fw.trim_empty_percent" Value="100"', 'Name="rro.vendor.qti.sys.fw.trim_empty_percent" Value="50"')
-        .regex_replace('Name="ro.vendor.qti.sys.fw.trim_cache_percent" Value="100"', 'Name="ro.vendor.qti.sys.fw.trim_cache_percent" Value="30"')
-        .regex_replace('Name="ro.vendor.qti.sys.fw.bg_apps_limit" Value="16"', 'Name="ro.vendor.qti.sys.fw.bg_apps_limit" Value="38"')
-        .regex_replace('Name="vendor.appcompact.enable_app_compact" Value="true"', 'Name="vendor.appcompact.enable_app_compact" Value="false"')
-        .regex_replace('Name="vendor.appcompact.full_compact_type"  Value="2"', 'Name="vendor.appcompact.full_compact_type"  Value="3"')
-        .regex_replace('Name="vendor.appcompact.some_compact_type"  Value="4"', 'Name="vendor.appcompact.some_compact_type"  Value="1"')
-        .regex_replace('Name="vendor.appcompact.compact_throttle_fullsome" Value="500"', 'Name="vendor.appcompact.compact_throttle_fullsome" Value="1000"'),
     'vendor/lib64/hw/com.qti.chi.override.so': blob_fixup()
         .add_needed('libcamera_metadata_shim.so'),
 }  # fmt: skip
@@ -123,11 +58,13 @@ blob_fixups: blob_fixups_user_type = {
 module = ExtractUtilsModule(
     'dre',
     'oneplus',
+    namespace_imports=namespace_imports,
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
-    namespace_imports=namespace_imports,
 )
 
 if __name__ == '__main__':
-    utils = ExtractUtils.device(module)
+    utils = ExtractUtils.device_with_common(
+        module, 'sm6375-common', module.vendor
+    )
     utils.run()
